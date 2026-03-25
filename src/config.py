@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
 
 CHROMA_PATH: str = os.getenv("CHROMA_PATH", "./chroma_db")
 COLLECTION_NAME: str = "rag_documents"
@@ -20,11 +20,11 @@ AUDIO_PATH: str = os.path.join(DATA_PATH, "audio")
 
 EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
 
-CHUNK_SIZE: int = 1000
-CHUNK_OVERLAP: int = 200
+CHUNK_SIZE: int = 1500
+CHUNK_OVERLAP: int = 300
 
 WHISPER_MODEL: str = "base"
 
-TOP_K_RESULTS: int = 5
+TOP_K_RESULTS: int = 10
 
 AUDIO_EXTENSIONS: list[str] = ["*.mp4", "*.mkv", "*.avi", "*.webm", "*.mov", "*.mp3", "*.wav"]

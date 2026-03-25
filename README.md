@@ -2,6 +2,7 @@
 
 A RAG chatbot that lets you chat with your PDF documents and audio/video recordings. Uses Google Gemini for LLM and ChromaDB for vector storage.
 
+
 ## Architecture
 
 ```
@@ -74,7 +75,7 @@ Environment variables (set in `.env`):
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `GEMINI_API_KEY` | (required) | Google Gemini API key |
-| `GEMINI_MODEL` | `gemini-2.0-flash` | Model to use |
+| `GEMINI_MODEL` | `gemini-3-flash-preview` | Model to use |
 | `LOG_LEVEL` | `INFO` | Set to `DEBUG` for Q&A metrics |
 
 RAG parameters (in `src/config.py`):
@@ -103,6 +104,34 @@ rag_chatbot/
 ├── Dockerfile
 ├── requirements.txt
 └── .env.example
+```
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **LLM** | Google Gemini 3 Flash |
+| **Embeddings** | Sentence Transformers (all-MiniLM-L6-v2) |
+| **Vector Database** | ChromaDB |
+| **API Framework** | FastAPI + Uvicorn |
+| **PDF Processing** | PyMuPDF |
+| **Audio Transcription** | Faster Whisper |
+| **Text Chunking** | LangChain Text Splitters |
+| **Frontend** | Open WebUI |
+| **Containerization** | Docker Compose |
+
+
+## Debug Logging
+
+Set `LOG_LEVEL=DEBUG` in `.env` to enable detailed Q&A metrics for each query:
+
+```
+QUESTION:  user's query
+RETRIEVAL:  number of chunks, distance scores, embedding and search time
+SOURCES: source documents with chunk counts
+CONTEXT: total context size sent to LLM
+ANSWER: generated response
+TIMING: generation and total processing time
 ```
 
 ## Troubleshooting

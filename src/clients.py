@@ -77,8 +77,8 @@ def reset_chroma_collection() -> chromadb.Collection:
     try:
         client.delete_collection(name=COLLECTION_NAME)
         logger.info("Deleted existing collection '%s'", COLLECTION_NAME)
-    except ValueError:
-        pass
+    except (ValueError, chromadb.errors.NotFoundError):
+        logger.info("Collection '%s' does not exist, creating new one", COLLECTION_NAME)
     
     _chroma_collection = client.create_collection(
         name=COLLECTION_NAME,
