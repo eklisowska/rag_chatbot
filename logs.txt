@@ -1,0 +1,42 @@
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - QUESTION: What are the production 'Do's' for RAG?
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - RETRIEVAL: 5 chunks | distances=[0.491, 0.502, 0.526, 0.609, 0.647] | avg=0.555 | embed_ms=11016 | search_ms=6
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - SOURCES: 1st Part_Productized Enterprise RAG.mp4 (1 chunks), Productized & Enterprise RAG.pdf (2 chunks), RAG Intro.pdf (1 chunks), Architecture & Design Patterns.pdf (1 chunks)
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - CONTEXT: 5031 chars (~1257 tokens)
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - ANSWER: Based on the provided context, the production "Do's" for RAG (specifically for productized and enterprise environments) include:
+rag-api     | 
+rag-api     | *   **Encryption & Anonymization:** Ensure data is secured and individual identities are protected.
+rag-api     | *   **Access Control:** Implement strict permissions and access policies for sensitive data.
+rag-api     | *   **Regular Audits:** Perform consistent monitoring and auditing to identify and fix vulnerabilities.
+rag-api     | *   **Context Augmentation:** Augment the context to ensure completions are accurate.
+rag-api     | *   **Use External Data:** Utilize external data and RAG models rather than just relying on internal training.
+rag-api     | *   **Post-Retrieval Processing:** Use techniques such as:
+rag-api     |     *   **Reranking & Filtering** of retrieved data.
+rag-api     |     *   **Query Transformations** (e.g., step-back prompting or rewriting/reformulating queries).
+rag-api     |     *   **Evaluation** of the system's performance.
+rag-api     | *   **Advanced Retrieval Techniques:** Implement methods like Vector Store Indices, Hierarchical Indices, or context enrichment (Sentence window or Auto-merging retrieval) to improve sourcing.
+rag-api     | *   **History Management:** Implement history management to ensure reasoning and context awareness.
+rag-api     | 2026-03-25 19:17:07,696 - rag.qa - DEBUG - TIMING: generation_ms=6464 | total_ms=17486
+
+
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - ══════════════════════════════════════════════════════════════════════
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - QUESTION: What is the difference between standard retrieval and the ColPali approach?
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - RETRIEVAL: 5 chunks | distances=[0.495, 0.534, 0.535, 0.568, 0.568] | avg=0.540 | embed_ms=27 | search_ms=5
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - SOURCES: Architecture & Design Patterns.pdf (1 chunks), 2 part Databases for GenAI.mp4 (1 chunks), 2nd Part_Architecture & Design Patterns.mp4 (1 chunks), Productized & Enterprise RAG.pdf (1 chunks), 1 part. RAG Intro.mp4 (1 chunks)
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - CONTEXT: 5047 chars (~1261 tokens)
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - ANSWER: Based on the provided context, there is no mention of the "ColPali approach."
+rag-api     | 
+rag-api     | The context describes **standard retrieval** as a process where a query/prompt is passed through an embedding model to identify relevant chunks in a vector store, which are then passed to an LLM as context. It also mentions advanced retrieval techniques (such as vector store indices, hierarchical indices, HyDE, and context enrichment) and post-retrieval steps (like reranking and query transformations), but it does not contain information regarding ColPali.
+rag-api     | 2026-03-25 19:31:23,809 - rag.qa - DEBUG - TIMING: generation_ms=3766 | total_ms=3798
+
+rag-api     | 2026-03-25 19:42:05,555 - rag.qa - DEBUG - ══════════════════════════════════════════════════════════════════════
+rag-api     | 2026-03-25 19:42:05,555 - rag.qa - DEBUG - QUESTION: Why is hybrid search better than vector-only search?
+rag-api     | 2026-03-25 19:42:05,555 - rag.qa - DEBUG - RETRIEVAL: 5 chunks | distances=[0.515, 0.538, 0.553, 0.562, 0.569] | avg=0.547 | embed_ms=20 | search_ms=6
+rag-api     | 2026-03-25 19:42:05,555 - rag.qa - DEBUG - SOURCES: 1 part. RAG Intro.mp4 (1 chunks), 2 part Databases for GenAI.mp4 (3 chunks), 2nd Part_Architecture & Design Patterns.mp4 (1 chunks)
+rag-api     | 2026-03-25 19:42:05,555 - rag.qa - DEBUG - CONTEXT: 5215 chars (~1303 tokens)
+rag-api     | 2026-03-25 19:42:05,556 - rag.qa - DEBUG - ANSWER: Based on the provided context, hybrid search is better than vector-only search for the following reasons:
+rag-api     | 
+rag-api     | *   **Increased Accuracy:** Using a hybrid system approach (combining vector search with BM25) increases accuracy by more than 10%. When a re-ranker is added to the hybrid approach, accuracy increases to 37.2%.
+rag-api     | *   **Combining Strengths:** While vector search provides semantic understanding, keyword searches like BM25 provide statistical calculations based on word frequency. They provide "much better results" when they work together.
+rag-api     | *   **Improved Retrieval Quality:** Hybrid search allows for a more reliable system. It enables the use of a re-ranking layer where the system can grab a larger pool of candidates (e.g., 100 instead of 5 or 10) from the database and then determine the best results to provide to the LLM.
+rag-api     | *   **Reliability:** The context states that one should not "rely solely on the vector search" to build a more reliable system.
+rag-api     | 2026-03-25 19:42:05,556 - rag.qa - DEBUG - TIMING: generation_ms=4496 | total_ms=4522
