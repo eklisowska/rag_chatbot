@@ -75,7 +75,7 @@ Environment variables (set in `.env`):
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `GEMINI_API_KEY` | (required) | Google Gemini API key |
-| `GEMINI_MODEL` | `gemini-3-flash-preview` | Model to use |
+| `GEMINI_MODEL` | `gemini-2.5-flash` | Model to use |
 | `LOG_LEVEL` | `INFO` | Set to `DEBUG` for Q&A metrics |
 
 RAG parameters (in `src/config.py`):
@@ -110,7 +110,7 @@ rag_chatbot/
 
 | Category | Technology |
 |----------|------------|
-| **LLM** | Google Gemini 3 Flash |
+| **LLM** | Google Gemini 2.5 Flash |
 | **Embeddings** | Sentence Transformers (all-MiniLM-L6-v2) |
 | **Vector Database** | ChromaDB |
 | **API Framework** | FastAPI + Uvicorn |
