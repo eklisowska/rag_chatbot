@@ -82,9 +82,11 @@ RAG parameters (in `src/config.py`):
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `CHUNK_SIZE` | `1000` | Chunk size (chars) |
-| `CHUNK_OVERLAP` | `200` | Overlap between chunks |
-| `TOP_K_RESULTS` | `5` | Chunks to retrieve |
+| `CHUNK_SIZE` | `1500` | Chunk size (chars) |
+| `CHUNK_OVERLAP` | `300` | Overlap between chunks |
+| `TOP_K_RESULTS` | `10` | Chunks to retrieve |
+
+> **Note:** These values were tuned based on experimentation. See [Configuration Experiment](#configuration-experiment) for details.
 
 ## Project Structure
 
@@ -133,6 +135,23 @@ CONTEXT: total context size sent to LLM
 ANSWER: generated response
 TIMING: generation and total processing time
 ```
+
+## Configuration Experiment
+
+The RAG parameters were tuned through a comparative experiment:
+
+| Parameter | Before | After | Change |
+|-----------|--------|-------|--------|
+| `CHUNK_SIZE` | 1000 | 1500 | +50% |
+| `CHUNK_OVERLAP` | 200 | 300 | +50% |
+| `TOP_K_RESULTS` | 5 | 10 | +100% |
+
+**Key findings:**
+- Larger chunks with more overlap prevent information gaps
+- Retrieving more chunks improves answer completeness, even if average similarity scores are slightly lower
+- Trade-off: longer generation times but more comprehensive answers
+
+Full analysis with metrics and examples: [logs_conclusions.md](logs_conclusions.md)
 
 ## Troubleshooting
 

@@ -161,12 +161,6 @@ def get_relevant_chunks_with_metrics(
     return metrics
 
 
-def get_relevant_chunks(question: str, top_k: int = TOP_K_RESULTS) -> list[dict]:
-    """Retrieve relevant chunks from ChromaDB based on the question."""
-    metrics = get_relevant_chunks_with_metrics(question, top_k)
-    return metrics.chunks
-
-
 def _build_context(context_chunks: list[dict]) -> str:
     """Build formatted context string from chunks."""
     return "\n\n---\n\n".join([
