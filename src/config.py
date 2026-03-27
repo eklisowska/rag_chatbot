@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 CHROMA_PATH: str = os.getenv("CHROMA_PATH", "./chroma_db")
 COLLECTION_NAME: str = "rag_documents"
